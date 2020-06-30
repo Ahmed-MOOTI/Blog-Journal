@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="col-md-6" *ngFor="let table of table; let i=index">
+        <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="220" src='{{table.image}}'>
+            <div class="card-body">
+                <div class="form-group has-default">
+                    <div class="form-group">
+                        <label>Titre Article</label> 
+                        <input type="text" class="form-control" placeholder="{{table.article}}">
+                    </div>
+                </div>
+                <div class="form-group has-default">
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" rows="4" style="font-size: 14px;"
+                            placeholder="{{table.description}}"></textarea>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" (click)="Delete(i)">Delete</button>
+                    <button type="button" class="btn btn-primary" (click)="up(i)">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-header">
+    <h2>UPDATE ARTICLE</h2>
+</div>
+<div class="card-body">
+    <div class="col-md-12 ">
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input type="file" (change)="onFileChange($event)" name="img" id="img" #img accept="image/*">
+            </div>
+        </div>
+        <form [formGroup]="updateForm" class="form" method="" action="#">
+            <div class="form-group has-default">
+                <div class="form-group">
+                    <label>Titre Article</label>
+                    <input formControlName="article" type="text" class="form-control" placeholder="Titre article">
+                </div>
+            </div>
+            <div class="form-group has-default">
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" formControlName="description" rows="4"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="update()">Update</button>
+</div>

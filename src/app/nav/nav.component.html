@@ -1,0 +1,48 @@
+<nav class="navbar navbar-fixed-top navbar bg-inverse">
+    <div class="container">
+        <p>
+            <a routerLink="/register" *ngIf="!(isLoggedIn | async)" routerLinkActive="active">Register</a><br>
+        </p>
+        <p>
+            <a routerLink="/login" *ngIf="!(isLoggedIn | async)" routerLinkActive="active">Login</a><br>
+        </p>
+
+    </div>
+        <div class="container">
+            <p>
+                <a routerLink="/newarticle" *ngIf="(isLoggedIn | async)" routerLinkActive="active">Add article</a><br>
+            </p>
+            <p>
+                <a routerLink="/find" *ngIf="(isLoggedIn | async)" routerLinkActive="active">Articles</a><br>
+            </p>
+            <p>
+                <a routerLink="/logout" *ngIf="(isLoggedIn | async)" type="button" (click)="logout()">Logout</a><br>
+            </p>
+
+        </div>
+</nav>
+<!-- <nav class="navbar navbar-fixed-top navbar bg-inverse">
+    <div class="container" *ngIf="token === null; else connected">
+        <p>
+            <a routerLink="/register" routerLinkActive="active">Register</a><br>
+        </p>
+        <p>
+            <a routerLink="/login" routerLinkActive="active">Login</a><br>
+        </p>
+
+    </div>
+    <ng-template #connected>
+        <div class="container">
+            <p>
+                <a routerLink="/newarticle" routerLinkActive="active">Add article</a><br>
+            </p>
+            <p>
+                <a routerLink="/find" routerLinkActive="active">Articles</a><br>
+            </p>
+            <p>
+                <a routerLink="/logout" type="button" (click)="logout()">Logout</a><br>
+            </p>
+
+        </div>
+    </ng-template>
+</nav> -->

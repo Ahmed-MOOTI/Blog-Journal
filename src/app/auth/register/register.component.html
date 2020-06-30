@@ -1,0 +1,37 @@
+<title>Sign Up</title>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h2>Create account</h2>
+			</div>
+			<div class="card-body">
+				<form [formGroup]="newuser">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" formControlName="name" style="width: 345px;" placeholder="username">
+
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+						</div>
+						<input type="email" style="width: 345px;" formControlName="email" placeholder="Email">
+
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input style="width: 345px;" type="password" formControlName="password" placeholder="password">
+					</div>
+					<div class="form-group">
+						<input value="Sign Up" class="btn float-right login_btn" (click)="reg()">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+<div class="card-header">
+  <h2>Create new Article</h2>
+</div>
+<div class="card-body">
+  <div class="col-md-12 ">
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" (change)="onFileChange($event)" name="img" id="img" #img accept="image/*">
+      </div>
+    </div>
+    <form [formGroup]="newarticle">
+      <div class="form-group has-default">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+          <input formControlName="article" type="text" class="form-control" placeholder="Titre article">
+        </div>
+      </div>
+      <div class="form-group has-default">
+        <div class="form-group">
+          <label>Description</label><br><br>
+          <textarea class="form-control" formControlName="description" rows="4" style="font-size: 14px;"></textarea>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <input value="Add" style='font-size: 12px; font-weight: bold; background-color:green;margin-top: 15px;'
+          class="btn float-right login_btn" (click)="article()">
+      </div>
+
+    </form>
+  </div>
+</div>
